@@ -1,16 +1,7 @@
-import { useMemo } from "react";
-import useMousePosition from "./hooks/useMousePosition";
+import useBackground from "./hooks/useBackground";
 
 export default function MouseApp() {
-  const position = useMousePosition();
-
-  const background = useMemo(
-    () => (position.x < window.innerWidth / 2
-         ? "green" 
-         : "orange"),
-    [position]
-  );
-
+  const {background,position} = useBackground();
   return (
     <div style={{ background, height: "100vh" }}>
       <pre>{JSON.stringify(position, null, 2)}</pre>
