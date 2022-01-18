@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import useTodos from "./hooks/useTodos";
 
 const initialTodos = [
   { id: 1, title: "Learn React" },
@@ -6,16 +6,19 @@ const initialTodos = [
 ];
 
 export default function TodoApp() {
-  const [todos, setTodos] = useState(initialTodos);
-
+  const [todos, addTodo, deleteTodo]=useTodos(initialTodos);
+    const newTodo = {title:"Learn Rast"}
   return (
     <div>
-        <button>Add</button>
+        <button onClick={()=>addTodo(newTodo)}>Add</button>
       <ul>
         {todos.map(todo => (
           <li key={todo.id}>
             {todo.title}
-            <button>Delete</button>
+            <button 
+                onClick={()=>deleteTodo(todo.id)}
+               >Delete
+            </button>
           </li>
         ))}
       </ul>
