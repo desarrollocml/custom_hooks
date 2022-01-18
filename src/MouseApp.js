@@ -9,7 +9,10 @@ export default function MouseApp() {
   useEffect(() => {
      const handleMouseMove = (e)=>{
         const {clientX,clientY} =e
-        console.log(clientX,clientY)
+        setPosition({
+            x:clientX,
+            y:clientY
+        })
      } 
      window.addEventListener("mousemove", handleMouseMove)
   }, [])
