@@ -1,12 +1,15 @@
 //import CounterApp from "./CounterApp";
 
-import TodoApp from "./TodoApp";
+import MouseApp from "./MouseApp";
+
+//import TodoApp from "./TodoApp";
 
 function App() {
   return (
     <div>
       {/* <CounterApp></CounterApp> */}
-      <TodoApp></TodoApp>
+     {/*  <TodoApp></TodoApp> */}
+     <MouseApp></MouseApp>
     </div>
   );
 }
